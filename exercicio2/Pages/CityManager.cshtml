@@ -1,0 +1,22 @@
+﻿@page
+@model exercicio2.Pages.CityManagerModel
+@{
+}
+
+<form method="post">
+    <div>
+        <label name="cityName">Nome</label>
+        <input type="text" name="cityName" />
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.CityName))
+{
+    <div>
+        <p>
+            Cidade:
+            <strong>@Model.CityName</strong>
+        </p>
+    </div>
+}

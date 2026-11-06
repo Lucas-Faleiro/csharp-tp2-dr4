@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="exercicio1/exercicio1.csproj" />
+  <Project Path="exercicio2/exercicio2.csproj" Id="3c0bb93b-0154-4ec5-81d8-112c3c253084" />
+  <Project Path="exercicio3/exercicio3.csproj" />
+</Solution>
