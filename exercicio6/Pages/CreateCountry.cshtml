@@ -1,0 +1,32 @@
+﻿@page
+@model exercicio6.Pages.CreateCountryModel
+@{
+}
+
+<form method="post">
+    <div>
+        <label asp-for="Input.CountryName">Nome</label>
+        <input asp-for="Input.CountryName" />
+        <span asp-validation-for="Input.CountryName" class="text-danger"></span>
+
+        <label asp-for="Input.CountryCode">Código</label>
+        <input asp-for="Input.CountryCode" />
+        <span asp-validation-for="Input.CountryCode" class="text-danger"></span>
+
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+@if (Model.SubmittedCountry != null)
+{
+    <div>
+        <p>
+            País Cadastrado:
+            <strong>@Model.SubmittedCountry.CountryName (@Model.SubmittedCountry.CountryCode)</strong>
+        </p>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

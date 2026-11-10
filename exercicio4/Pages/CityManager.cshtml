@@ -1,0 +1,27 @@
+@page
+@model exercicio4.Pages.CityManagerModel
+@{
+}
+
+<form method="post">
+    <div>
+        <label asp-for="Input.CityName">Nome</label>
+        <input type="text" asp-for="Input.CityName" />
+        <span asp-validation-for="Input.CityName" class="text-danger"></span>
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.SubmittedCity))
+{
+    <div>
+        <p>
+            Cidade:
+            <strong>@Model.SubmittedCity</strong>
+        </p>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
