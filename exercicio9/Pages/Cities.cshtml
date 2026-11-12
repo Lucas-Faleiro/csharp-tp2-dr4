@@ -1,0 +1,12 @@
+﻿@page
+@model exercicio9.Pages.CitiesModel
+@{
+}
+
+<div>
+    <h3>Link das Cidades:</h3>
+    @foreach (var City in Model.Cities)
+    {
+        <a asp-page="/CityDetails" asp-route-cityName=@City>@City</a>
+    }
+</div>

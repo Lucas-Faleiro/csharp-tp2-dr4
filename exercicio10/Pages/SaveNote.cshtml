@@ -1,0 +1,21 @@
+﻿@page
+@model exercicio10.Pages.SaveNoteModel
+@{
+}
+
+<div>
+    <h2>Salve sua Anotação:</h2>
+    <form method="post">
+        <label asp-for="Input.Content"></label>
+        <input asp-for="Input.Content"/>
+        <button type="submit">Salvar</button>
+    </form>
+
+    @if(!string.IsNullOrEmpty(Model.FileName))
+    {
+        <div class="alert alert-sucess mt-3">
+            <p>Arquivo <strong>@Model.FileName</strong> foi salvo com sucesso</p>
+            <a href="~/files/@Model.FileName" download>Baixar Aqui</a>
+        </div>
+    }
+</div>

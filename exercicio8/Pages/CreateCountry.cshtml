@@ -1,0 +1,42 @@
+﻿@page
+@model exercicio8.Pages.CreateCountryModel
+@{
+}
+
+<form method="post">
+    <div class="d-flex flex-column gap-3" style="max-width: 320px;">
+        @for (int i = 0; i < 5; i++)
+        {
+            <div class="d-flex flex-column gap-1 border-bottom pb-3">
+                <label asp-for="Input[i].CountryName">Nome</label>
+                <input asp-for="Input[i].CountryName" class="form-control" />
+                <span asp-validation-for="Input[i].CountryName" class="text-danger"></span>
+
+                <label asp-for="Input[i].CountryCode">Código</label>
+                <input asp-for="Input[i].CountryCode" class="form-control" />
+                <span asp-validation-for="Input[i].CountryCode" class="text-danger"></span>
+            </div>
+        }
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+</form>
+
+@if (Model.SubmittedCountries.Any())
+{
+    <div>
+        <p>
+            Países Cadastrado:
+            @foreach (var country in Model.SubmittedCountries)
+            {
+                <li>
+                    <strong>@country.CountryName (@country.CountryCode)</strong>
+                </li>
+            }
+        </p>
+    </div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
